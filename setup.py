@@ -12,7 +12,7 @@ setuptools.setup(
     description="A c/c++ cli ",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/aaronflower/clic",
+    url="https://github.com/AaronFlower/clic",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -11,13 +11,20 @@ do
     res=`${i} --version 2>&1`
     # save `cmd --verison` executed status
     vres=$?
-    echo $res |grep '3\.[[:digit:]]'
+    echo $res |grep '3\.[[:digit:]]' >/dev/null
 
+    # Get the absolute path
+    DIRECTORY=$(cd `dirname $0` && pwd)
+
+    # if we can find python 3 command
     if [ $vres -eq 0 -a $? -eq 0 ]; then
-        echo "[+] version is: $res, ${i}"
-        ${i} ./create.py $1
+        # echo "[+] version is: $res, ${i}"
+        ${i} $DIRECTORY/create.py $1
+
+        # after folder create
+        if [ $? -eq 0 ]; then
+            cd $1/build && cmake .. && make && ./$1
+        fi
         break
-    else
-        echo "[-] Error: ${i} command error"
     fi
 done

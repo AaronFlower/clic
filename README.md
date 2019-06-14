@@ -2,15 +2,14 @@
 
 > Clic is a tool for c/c++ Development
 
-### Install
-
-
 ### Requirements
 
 First, you should clone [google/googletest] in your local machine.
 
 - [google/googletest](https://github.com/google/googletest)
 - CMake
+
+### Install
 
 ### How to use
 
