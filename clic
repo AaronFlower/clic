@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Declare possible python 3 command
+declare -a pyCmds=("ddddd" "python" "python3" "py" "py3")
+
+for i in "${pyCmds[@]}"
+do
+    # echo "$i"
+    # version=`i --verison 2>&1`
+    # res=`${i} --version 2>&1 1>/dev/null`
+    res=`${i} --version 2>&1`
+    # save `cmd --verison` executed status
+    vres=$?
+    echo $res |grep '3\.[[:digit:]]'
+
+    if [ $vres -eq 0 -a $? -eq 0 ]; then
+        echo "[+] version is: $res, ${i}"
+        ${i} ./create.py $1
+        break
+    else
+        echo "[-] Error: ${i} command error"
+    fi
+done
