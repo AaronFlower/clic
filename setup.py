@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='clic',
-    version='0.1',
+    version='0.1.1',
     # scripts=['clic'],
     author="AaronFlower",
     author_email="haojunzhan@gmail.com",
@@ -24,7 +24,8 @@ setuptools.setup(
     ],
     entry_points={
         "console_scripts": [
-            "clic=clic.clic:main",
+            # clic = clic 目录->main.py->main()
+            "clic=clic.main:main",
         ]
     },
 )
