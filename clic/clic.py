@@ -6,12 +6,7 @@ import os.path as path
 import shutil
 import re
 
-def errExit(msg, code = 1):
-    print("[-] Error: " + msg)
-    sys.exit(code)
-    return
-
-def create():
+def main():
     if (len(sys.argv) < 2):
         print("Usage: clic your-project")
         sys.exit(1)
@@ -35,6 +30,11 @@ def create():
     createFolder(project_name, gtest_path)
     copyFiles(project_name, exec_path + "/template")
     print("[+] Successfully created a cpp project.\n\n")
+    return
+
+def errExit(msg, code = 1):
+    print("[-] Error: " + msg)
+    sys.exit(code)
     return
 
 def isValidName(name):
@@ -78,4 +78,4 @@ def copyFiles(root, templateDir):
 
 
 if __name__ == "__main__":
-    create()
+    main()
