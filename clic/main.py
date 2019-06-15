@@ -29,7 +29,7 @@ def main():
 
     createFolder(project_name, gtest_path)
     copyFiles(project_name, exec_path + "/template")
-    print("[+] Successfully created a cpp project.\n\n")
+    print("\n [+] Successfully created a cpp project.\n")
     return
 
 def errExit(msg, code = 1):
@@ -41,7 +41,7 @@ def isValidName(name):
     '''
     Add is valid check
     '''
-    return re.match(r"^[\w]+$", name) != None
+    return re.match(r"^[\w][\w-]+$", name) != None
 
 def createFolder(root, gtest_path):
     assert isinstance(root, str) and len(root) > 0
