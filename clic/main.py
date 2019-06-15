@@ -59,7 +59,7 @@ def createFolder(root, gtest_path):
 
 def copyFiles(root, templateDir):
     try:
-        files_list = ['test.cpp', 'solution.h', 'CMakeLists.txt']
+        files_list = ['test.cpp', 'solution.h', 'CMakeLists.txt', 'readme.md']
         for f in files_list:
             src = templateDir + "/" + f
             dst = root + "/" + f

@@ -54,9 +54,37 @@ Hello mycpp
 
 If you don't want to export the `GTEST_PATH` environment,  you can specify the path in the same command as follows:
 
-```c
+```bash
 $ GTEST_PATH=/path/to/cloned/googletest clic my-new-app
 $ cd my-new-app
 ```
 
 Now, Enjoy your simple c/c++ project. 😉
+
+In the `test.cpp` file, you can write your tests.
+
+```c++
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
+#include "solution.h"
+
+#include <iostream>
+
+TEST(test, INIT) {
+    /* write your test */
+}
+```
+
+and in the `solution.h` file you can write your solution.
+
+```c++
+#ifndef MY_SOLUTION__
+#define MY_SOLUTION__
+
+class Solution {
+public:
+    /* write your solution */
+};
+
+#endif /* ifndef MY_SOLUTION__ */
+```
