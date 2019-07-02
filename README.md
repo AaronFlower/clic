@@ -59,6 +59,8 @@ $ GTEST_PATH=/path/to/cloned/googletest clic my-new-app
 $ cd my-new-app
 ```
 
+The `clic` command create a empty c++ project for you, and link your `GTEST_PATH` to the project `lib/googletest`.
+
 Now, Enjoy your simple c/c++ project. 😉
 
 In the `test.cpp` file, you can write your tests.
